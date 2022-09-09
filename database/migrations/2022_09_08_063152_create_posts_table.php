@@ -17,8 +17,9 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('sake_name',100);
             $table->text('body');
-            $table->increments('good');
+            $table->integer('good');
             $table->string ('image');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
