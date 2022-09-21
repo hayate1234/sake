@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+html, body {
+                background-color: #E6FFE9;
+                //color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            /*.links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }*/
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+            
+            .head {
+                color:   #444444;
+                //text-align: right;
+                
+            }
+            
+            .head-left{
+                display: inline-block;
+            }
+            
+            .head-right{
+                display: inline-block;
+                padding-left: 70%;
+            }
+            
+            .header{
+                color: #111111;
+                border-top: solid;
+                border-bottom: solid;
+            }
+            
+            .header div{
+                display: inline-block;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            
+            .homeurl{
+                padding-left: 3%;
+            }
+            .posturl{
+                padding-left: 65%;
+            }
+            
+            .profileurl{
+                padding-left: 5%;
+            }
+            
+            .posts{
+                margin-top: 20px;
+                display: inline-block;
+            }
+            
+            .post{
+                border: solid;
+            }
+            
+            .posts-right{
+                float: right;
+                margin-top: 20px;
+                margin-right: 20%;
+            }
+            
+            .blog-category{
+                display: inline-block;
+                background-color: #99FF00;
+                padding: 3 20px;
+            }
+            
+            .blog-category h3{
+                display: inline-block;
+                padding-left: 50px;
+                padding-right: 50px;
+                color: #FFFFFF;
+            }
+            
+            .searchclass{
+                border: solid;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .search p{
+                display: inline-block;
+            }
+            
+            .input{
+                display: inline-block;
+            }

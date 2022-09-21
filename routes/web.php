@@ -15,5 +15,13 @@
     return view('welcome');
 });*/
 
-Route::get('/posts','PostController@index');
+Route::group(['middleware' => ['auth']], function(){
+Route::get('/','PostController@index');
 Route::get('/posts/create','PostController@create');
+Route::post('/posts','PostController@store');
+Route::get('/user','UserController@index');
+Route::delete('/posts/{post}',[PostController::class,'delete']);
+});
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
