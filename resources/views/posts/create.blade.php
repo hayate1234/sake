@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+<link rel="stylesheet" href="/css/create.css">
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -11,90 +15,7 @@
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #E6FFE9;
-                //color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
             
-            .header{
-                color #111111;
-                border-top: solid;
-                border-bottom: solid;
-            }
-            
-            .header div{
-                display: inline-block;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-            
-            .homeurl{
-                padding-left: 3%;
-            }
-            .posturl{
-                padding-left: 65%;
-            }
-            
-            .profileurl{
-                padding-left: 5%;
-            }
-            
-            .creates{
-                display: inline-block;
-            }
-            
-            .creates-image{
-                float: right;
-                margin-right: 20%;
-                padding-top: 5%;
-            }
-            
-            .create-category p{
-                display: inline-block;
-                padding-top: 30px;
-                padding-left: 25px;
-                padding-right: 40px;
-            }
-            
-            .input {
-                display: inline-block;
-            }
-            
-            .input input{
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-            
-            .input textarea{
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-            
-            ::placeholder {
-                text-align: center;
-            }
-            
-            .creates-image input{
-                margin-top: 150px;
-            }
-            
-            .creates-image p{
-                margin-left: 100px;
-            }
-            
-            .post-submit input{
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 20px;
-                padding-right: 20px;
-                margin-left: 100px;
-            }
         </style>
     </head>
     <body>
@@ -116,7 +37,11 @@
                 
                  <div class="create-category">
                     <p>種類　　</p>
-                    <div class="input"><input type="text" name="category[name]" placeholder="ウイスキーなど"/></div>
+                    <select name="post[category_id]">
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                    </select>
                 </div>
                 
                  <div class="create-category">
@@ -149,3 +74,4 @@
         </form>
     </body>
 </html>
+@endsection

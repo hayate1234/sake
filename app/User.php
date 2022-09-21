@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
+    
+    public function getOwnPaginateBylimit(int $limit_count = 10)
+    {
+        return $this::with('posts')->find(Auth::id())->posts()->orderBy('updated_at','DESC')->paginate($limit_count);
+    }
 }
