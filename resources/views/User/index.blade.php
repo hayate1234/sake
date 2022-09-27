@@ -16,10 +16,13 @@
                     <small>{{ $post->user->name }}</small>
                     <p>{{ $post->body }}</p>
                 </div>
-                <form action='/posts/{{ $post->id }}' id="form_{{ $post->id}}" method="post"></form>
+                <p class="edit">[<a href="/posts/{{$post->id}}/edit">編集</a>]</p>
+                <form action="/posts/{{ $post->id }}" id="form_delete" method="post">
                     @csrf
                     @method('DELETE')
-                    <button type="button" onclick="deletePost({{ $post->id }})">投稿削除</button>
+                    <input type="submit" style="display:none">
+                    <p class="delete"><span onclick="deletePost(this);">投稿削除</span></p>
+                </form>
             @endforeach
        
             <div class='paginate'>
@@ -27,12 +30,12 @@
             </div>
         </div>
         <script>
-            function deletePost(id)
+            function deletePost(e)
             {
                 'use strict'
                 if(confirm('削除すると復元できません。\n本当に削除しますか？'))
                 {
-                    document.getElementById('form_${id}').submit();
+                    document.getElementById('form_delete').submit();
                 }
             }
         </script>
