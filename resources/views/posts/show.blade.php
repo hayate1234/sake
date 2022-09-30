@@ -39,6 +39,26 @@
             </div>
             <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             <div class='back'>[<a href='/'>back</a>]</div>
+        
+        <div id="myMap"
+        style='position:relative;width:600px;height:400px;'>
+        </div>
+        
+        <script
+            src='https://www.bing.com/api/maps/mapcontrol?key=AhSDoOgEGXe5GIHhqO8USOVg0T8-wU6flUMORG2y5Ayyu5M2bl6SFduKx05b231G&callback=GetMap'
+                async defer>
+        </script>
+        
+        <script>
+            function GetMap()
+            {
+               const map = new Microsoft.Maps.Map('#myMap', {
+                   center: new Microsoft.Maps.Location(36.6149,90.1941),
+                   mapTypeId: Microsoft.Maps.MapTypeId. load,
+                   zoom: 10
+               });
+            }
+        </script>
     </body>
 </html>
 @endsection

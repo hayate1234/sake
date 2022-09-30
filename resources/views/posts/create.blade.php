@@ -27,7 +27,7 @@
             <div class="posturl"><a href="/">投稿</a></div>
             <div class="profileurl"><a href="/">プロフィール</a></div>
         </div>
-        <form action="/posts" method="POST">
+        <form action="/posts" method="post" enctype="multipart/form-data">
             @csrf
             <div class="creates">
                 <div class="create-category">
@@ -67,7 +67,7 @@
             
             <div class="creates-image">
                 <p>イメージ画像</p>
-                <input accept="image/jpeg,image/png,image/gif" name="post[image]" type="file">
+                <input accept="image/jpeg,image/png,image/gif" name="image" type="file">
                 <br>
                 <div class="post-submit"><input type="submit" value="投稿する"></div>
             </div>
