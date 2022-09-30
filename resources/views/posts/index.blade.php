@@ -21,14 +21,14 @@
         </style>
     </head>
     <body>
-        <div class="head">
+        <!--<div class="head">
             <h1 class="head-left">SakeLabo</h1>
             <p class="head-right"><a href="/login">ユーザー登録</a></p>
-        </div> 
+        </div> -->
         <div class="header">
-            <div class="homeurl"><a href="/">HomeLabo</a></div>
+            <div class="homeurl"><a href="/user">プロフィール</a></div>
             <div class="posturl"><a href="/posts/create">投稿</a></div>
-            <div class="profileurl"><a href="/user">プロフィール</a></div>
+            <div class="profileurl"><a href="/login">ユーザー登録</a></div>
         </div>
         <div class="posts">
                     <div class="blog-category">
@@ -37,10 +37,10 @@
                     </div>
                     <div class="post">
                         @foreach ($posts as $post)
-                        <h2 class="sake-name"><a href="/">{{ $post->sake_name }}</a></h2>
+                        <h2 class="sake-name"><a href="/posts/{{ $post->id }}">{{ $post->sake_name }}</a></h2>
                         <div class="sake-category">
                             <p>{{ $post->category->name }}</p>
-                            <image href={{$post->image }}/>
+                            <image src="/storage/{{ $post->image }}" width=100px height=100px>
                         </div>
                         @endforeach
                     </div>

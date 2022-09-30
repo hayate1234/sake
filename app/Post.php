@@ -18,6 +18,7 @@ class Post extends Model
         'body',
         'category_id',
         'image',
+        'image_path',
         'user_id',
         'sellstore'
     ];

@@ -29,6 +29,9 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $input +=['user_id' => $request->user()->id];
+        $filename=$request->file('image')->store('/public');
+        $post->image=basename($filename);
+        $post->image_path='/storage/'.$filename;
         $post->fill($input)->save();
         $input = $request['spot'];
         $input +=['post_id' => $post->id];

@@ -34,4 +34,7 @@ return [
         'token' => env('SAKENOTE_ACCESS_TOKEN'),    
     ],
 
+    'bingmaps' => [
+        'key' => env('MY_MAP_KEY'),
+    ],
 ];
